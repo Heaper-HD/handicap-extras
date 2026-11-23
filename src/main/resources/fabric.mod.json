@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "handicap_extras",
+	"version": "${version}",
+	"name": "Handicap Extras",
+	"description": "Addon for the handicap mod, adds some more handicaps and multiplayer features",
+	"authors": [
+		"Heaper"
+	],
+	"contact": {
+		"sources": "https://github.com/Heaper-HD/handicap-extras"
+	},
+	"license": "LGPL-3.0",
+	"icon": "assets/handicap_extras/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.heaper.HandicapExtras"
+		],
+		"client": [
+			"com.heaper.client.HandicapExtrasClient"
+		]
+	},
+	"mixins": [
+		"handicap_extras.mixins.json",
+		{
+			"config": "handicap_extras.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*",
+		"handicap": "1.6.0"
+	}
+}

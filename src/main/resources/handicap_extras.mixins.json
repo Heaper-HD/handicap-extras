@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.heaper.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"HandicapsMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
