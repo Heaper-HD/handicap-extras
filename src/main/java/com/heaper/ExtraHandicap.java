@@ -17,6 +17,7 @@ public abstract class ExtraHandicap extends HandicapBehaviour {
         super(id);
     }
 
+    public void registerEvents() {}
     public void onGive(ServerPlayer p) {}
     public void onRemove(ServerPlayer p) {}
     public void onTick(ServerPlayer p) {}

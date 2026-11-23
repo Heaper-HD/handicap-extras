@@ -27,6 +27,7 @@ public class SeparationAnxiety extends ExtraHandicap {
     public void onTick(ServerPlayer p) {
         boolean alone = alone(p);
         setModifier(p, Attributes.MOVEMENT_SPEED, "slow", -0.4, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL, alone);
+        setModifier(p, Attributes.ATTACK_DAMAGE, "weak", -0.3, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL, alone);
 
         if (alone && anxious.add(p.getUUID())) {
             overlay(p, "You feel anxious being alone...");
@@ -38,6 +39,7 @@ public class SeparationAnxiety extends ExtraHandicap {
     @Override
     public void onRemove(ServerPlayer p) {
         setModifier(p, Attributes.MOVEMENT_SPEED, "slow", 0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL, false);
+        setModifier(p, Attributes.ATTACK_DAMAGE, "weak", 0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL, false);
         anxious.remove(p.getUUID());
     }
 

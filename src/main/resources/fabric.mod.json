@@ -10,7 +10,7 @@
 	"contact": {
 		"sources": "https://github.com/Heaper-HD/handicap-extras"
 	},
-	"license": "LGPL-3.0",
+	"license": "LGPL-3.0-only",
 	"icon": "assets/handicap_extras/icon.png",
 	"environment": "*",
 	"entrypoints": {

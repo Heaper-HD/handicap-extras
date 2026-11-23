@@ -1,7 +1,7 @@
 package com.heaper.client;
 
 import com.handicap.Handicap;
-import com.heaper.client.extra_handicaps.SeparationAnxietyClient;
+import com.heaper.client.extra_handicaps.*;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -33,7 +33,15 @@ public class ExtraClientHandicapsRegistry {
     }
 
     public static void init() {
+        register(new ArthritisClient());
+
         register(new SeparationAnxietyClient());
+        register(new AgoraphobiaClient());
+        register(new AcrophobiaClient());
+        register(new AquaphobiaClient());
+        register(new PhotophobiaClient());
+        register(new PyrophobiaClient());
+
         frozen = true;
     }
 }

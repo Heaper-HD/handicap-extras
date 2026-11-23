@@ -6,9 +6,25 @@ The new handicaps plug straight into Handicap's own systems: they show up in its
 
 ## Handicaps
 
-| Handicap | Effect                                                                                                     |
-|---|------------------------------------------------------------------------------------------------------------|
-| Separation Anxiety | With no other player, tamed pet of yours or villager nearby, you slow down and your view starts trembling. |
+| Handicap | Effect |
+|---|---|
+| Separation Anxiety | With no other player or tamed pet of yours nearby, you slow down and your view trembles. |
+| Gigantism | You're 50% bigger with more reach, but 2-block-high doorways no longer fit you. |
+| Motion Sickness | Riding boats, minecarts or mounts makes you nauseous and weak. |
+| Agoraphobia | Under the open sky you slow down and your view trembles. |
+| Nyctophobia | In the dark without a light source in hand, you're slower and weaker. |
+| Sun Allergy | Direct sunlight sets you on fire unless you wear a helmet. |
+| Acrophobia | Near a drop of 5+ blocks you slow down and your view trembles. |
+| Aquaphobia | In water you swim slower, hit weaker and panic. |
+| Hyperphagia | Your hunger drains much faster. |
+| Photophobia | Bright light without a helmet slows and weakens you, and your view narrows as you squint. |
+| Pyrophobia | Near fire, lava, lit furnaces or campfires you panic: slower, weaker and shaky. |
+
+### Changes to existing handicaps
+
+| Handicap | Change |
+|---|---|
+| Arthritis | Below full health you also can only eat and you deal 60% less damage.
 
 ## Requirements
 

@@ -1,7 +1,7 @@
 package com.heaper;
 
 import com.handicap.Handicap;
-import com.heaper.extra_handicaps.SeparationAnxiety;
+import com.heaper.extra_handicaps.*;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -22,6 +22,7 @@ public class ExtraHandicapsRegistry {
         }
 
         HANDICAPS.put(h.handicap(), h);
+        h.registerEvents();
     }
 
     public static ExtraHandicap get(Handicap h) {
@@ -33,7 +34,19 @@ public class ExtraHandicapsRegistry {
     }
 
     public static void init() {
+        register(new Arthritis());
+
         register(new SeparationAnxiety());
+        register(new Gigantism());
+        register(new MotionSickness());
+        register(new Agoraphobia());
+        register(new Nyctophobia());
+        register(new SunAllergy());
+        register(new Acrophobia());
+        register(new Aquaphobia());
+        register(new Hyperphagia());
+        register(new Photophobia());
+        register(new Pyrophobia());
 
         frozen = true;
     }
