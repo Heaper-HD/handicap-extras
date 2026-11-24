@@ -27,7 +27,7 @@ public class SunAllergy extends ExtraHandicap {
         if (burn) {
             p.igniteForSeconds(3);
             if (burning.add(p.getUUID())) {
-                overlay(p, "The sun burn your skin!");
+                overlay(p, "The sun burns your skin!");
             }
         } else {
             burning.remove(p.getUUID());

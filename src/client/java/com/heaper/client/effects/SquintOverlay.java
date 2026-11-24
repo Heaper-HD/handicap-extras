@@ -11,12 +11,7 @@ public class SquintOverlay {
 
     private SquintOverlay() {}
 
-    public static void render(GuiGraphicsExtractor g) {
-        float intensity = CHANNEL.current();
-        if (intensity <= 0f) {
-            return;
-        }
-
+    public static void render(GuiGraphicsExtractor g, float intensity) {
         int w = g.guiWidth();
         int h = g.guiHeight();
         int bar = Math.round(h * MAX_COVER * intensity);

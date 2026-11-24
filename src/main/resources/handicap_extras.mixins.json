@@ -3,7 +3,8 @@
 	"package": "com.heaper.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"HandicapsMixin"
+		"HandicapsMixin",
+		"LivingEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

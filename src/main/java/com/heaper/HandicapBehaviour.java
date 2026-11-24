@@ -2,7 +2,7 @@ package com.heaper;
 
 import com.handicap.Handicap;
 
-public class HandicapBehaviour {
+public abstract class HandicapBehaviour {
     private final String id;
     private final Handicap handicap;
 

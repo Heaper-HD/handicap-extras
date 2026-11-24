@@ -30,8 +30,8 @@ loom {
 			programArgs "--username", "Player1"
 		}
 
-		def extraClients = (project.findProperty("dev_client") ?: "3") as int
-		(2..extraClients + 1).each { i ->
+		def extraClient = (project.findProperty("dev_client") ?: "3") as int
+		(2..extraClient + 1).each { i ->
 			create("client$i") {
 				client()
 				name = "Minecraft Client $i"

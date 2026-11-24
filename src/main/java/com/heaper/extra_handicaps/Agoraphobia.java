@@ -35,7 +35,7 @@ public class Agoraphobia extends ExtraHandicap {
         if (seconds == DELAY_SECONDS) {
             overlay(p, "The open sky makes you panic...");
         }
-        setModifier(p, Attributes.MOVEMENT_SPEED, "slow", -0.35, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL, false);
+        setModifier(p, Attributes.MOVEMENT_SPEED, "slow", -0.35, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL, panicking);
     }
 
     @Override

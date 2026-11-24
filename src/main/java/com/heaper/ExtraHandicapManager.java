@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.ItemStack;
 
 import java.util.*;
 
@@ -65,6 +66,19 @@ public class ExtraHandicapManager {
 
         for (Handicap d : current) {
             ExtraHandicapsRegistry.get(d).onTick(p);
+        }
+    }
+
+    public static void onConsume(ServerPlayer p, ItemStack item) {
+        HandicapState state = HandicapManager.state();
+        if (state == null) {
+            return;
+        }
+        for (Handicap d : state.get(p.getUUID())) {
+            ExtraHandicap h = ExtraHandicapsRegistry.get(d);
+            if (h != null) {
+                h.onConsume(p, item);
+            }
         }
     }
 }

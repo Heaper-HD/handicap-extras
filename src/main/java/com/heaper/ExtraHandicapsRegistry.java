@@ -47,6 +47,8 @@ public class ExtraHandicapsRegistry {
         register(new Hyperphagia());
         register(new Photophobia());
         register(new Pyrophobia());
+        register(new Hemophilia());
+        register(new PickyEater());
 
         frozen = true;
     }

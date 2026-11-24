@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.ItemStack;
 
 import java.util.UUID;
 
@@ -19,6 +20,7 @@ public abstract class ExtraHandicap extends HandicapBehaviour {
 
     public void registerEvents() {}
     public void onGive(ServerPlayer p) {}
+    public void onConsume(ServerPlayer p, ItemStack item) {}
     public void onRemove(ServerPlayer p) {}
     public void onTick(ServerPlayer p) {}
     public void forget(UUID player) {}

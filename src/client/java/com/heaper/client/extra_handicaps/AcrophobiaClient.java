@@ -6,7 +6,7 @@ import net.minecraft.client.Minecraft;
 
 public class AcrophobiaClient extends ConditionRampHandicap {
     public AcrophobiaClient() {
-        super("acrophobia", 0.04f, 0.06f, 0.08f, CameraShake.CHANNEL.bind());
+        super("acrophobia", 0.04f, 0.06f, 0.8f, CameraShake.CHANNEL.bind());
     }
 
     @Override

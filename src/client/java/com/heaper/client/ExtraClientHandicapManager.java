@@ -3,9 +3,7 @@ package com.heaper.client;
 import com.handicap.Handicap;
 import com.handicap.client.ClientState;
 import com.heaper.LifecycleTracker;
-import com.heaper.client.effects.CameraShake;
 import com.heaper.client.effects.EffectChannel;
-import com.heaper.client.effects.SquintOverlay;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 

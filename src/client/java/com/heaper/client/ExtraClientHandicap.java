@@ -4,7 +4,7 @@ import com.handicap.client.ClientState;
 import com.heaper.HandicapBehaviour;
 import net.minecraft.client.Minecraft;
 
-public class ExtraClientHandicap extends HandicapBehaviour {
+public abstract class ExtraClientHandicap extends HandicapBehaviour {
     protected ExtraClientHandicap(String id) {
         super(id);
     }
