@@ -18,7 +18,25 @@ public enum HandicapsMixin {
     PHOTOPHOBIA("photophobia", "Photophobia", "Bright lights make you squint: slower and weaker unless you wear a helmet"),
     PYROPHOBIA("pyrophobia", "Pyrophobia", "Being near fire or lava makes you panic"),
     HEMOPHILIA("hemophilia", "Hemophilia", "Getting hurt makes you bleed until you bandage yourself with paper or wool"),
-    PICKY_EATER("picky_eater", "Picky Eater", "Eating the same food twice in a row barely feeds you and makes you sick");
+    PICKY_EATER("picky_eater", "Picky Eater", "Eating the same food twice in a row barely feeds you and makes you sick"),
+    SOCIAL_ANXIETY("social_anxiety", "Social Anxiety", "Being around a group of players make you slow, weak and shaky"),
+    HEMOPHOBIA("hemophobia", "Hemophobia", "Seeing another player get hurt makes you faint"),
+    LOUD_SNORING("loud_snoring", "Loud Snoring", "While you sleep, nobody near you can sleep"),
+    ALLERGY("allergy", "Allergy", "You're allergic to one random thing: being near it makes you sneeze, and staying close poisons you"),
+    STUTTER("stutter", "Stutter", "Your worlds sometimes come out stuttered"),
+    FOREING_ACCENT("foreign_accent", "Foreign Accent", "Everything you say comes out in a string accent"),
+    ECHOLALIA("echolalia", "Echolalia", "You sometimes repeat what others said"),
+    APHASIA("aphasia", "Aphasia", "Words in your message get swapped for words others used"),
+    BROKEN_TELEPHONE("broken_telephone", "Broken Telephone", "Your messages only reach one random player"),
+    COMPULSIVE_GIFTING("compulsive_gifting", "Compulsive Gifting", "You sometimes throw your items at the nearest player"),
+    SYMPATHETIC_PAIN("sympathetic_pain", "Sympathetic Pain", "When you see another player get hurt, you feel part of it"),
+    CANT_FEED_YOURSELF("cant_feed_yourself", "Can't Feed Yourself", "You can't eat on your own; Someone has to feed you"),
+    HYPORTHERMIA("hypothermia", "Hypothermia", "Could biomes freeze you unless you're near fire or a friend"),
+    GERMAPHOBIA("germaphobia", "Germaphobia", "Picking up items other players dropped make you sick"),
+    FEATHERWEIGHT("featherweight", "Featherweight", "Low gravity: floaty jumps that are hard to control"),
+    HEAVYWEIGHT("heavyweight", "Heavyweight", "Heavy gravity: short jumps, hard falls"),
+    CONTAGIOUS_CLD("contagious_cold", "Contagious Cold", "You have a cold, and it spreads to players near you"),
+    CONJOINED("conjoined", "Conjoined", "You're tethered ot another player and can't get far from them");
 
     @Shadow
     HandicapsMixin(String id, String displayName, String description) {

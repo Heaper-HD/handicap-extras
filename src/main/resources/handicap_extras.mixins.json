@@ -4,7 +4,10 @@
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
 		"HandicapsMixin",
-		"LivingEntityMixin"
+		"LivingEntityMixin",
+		"ItemEntityMixin",
+		"DisplayAccessor",
+		"BlockDisplayAccessor"
 	],
 	"injectors": {
 		"defaultRequire": 1

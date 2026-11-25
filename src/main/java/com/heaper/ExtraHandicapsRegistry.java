@@ -49,6 +49,24 @@ public class ExtraHandicapsRegistry {
         register(new Pyrophobia());
         register(new Hemophilia());
         register(new PickyEater());
+        register(new SocialAnxiety());
+        register(new Hemophobia());
+        register(new LoudSnoring());
+        register(new Allergy());
+        register(new Stutter());
+        register(new ForeignAccent());
+        register(new Echolalia());
+        register(new Aphasia());
+        register(new BrokenTelephone());
+        register(new CompulsiveGifting());
+        register(new SympatheticPain());
+        register(new CantFeedYourself());
+        register(new Hypothermia());
+        register(new Germaphobia());
+        register(new Featherweight());
+        register(new Heavyweight());
+        register(new ContagiousCold());
+        register(new Conjoined());
 
         frozen = true;
     }

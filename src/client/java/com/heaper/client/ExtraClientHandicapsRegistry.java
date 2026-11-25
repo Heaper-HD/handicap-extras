@@ -41,6 +41,7 @@ public class ExtraClientHandicapsRegistry {
         register(new AquaphobiaClient());
         register(new PhotophobiaClient());
         register(new PyrophobiaClient());
+        register(new SocialAnxietyClient());
 
         frozen = true;
     }

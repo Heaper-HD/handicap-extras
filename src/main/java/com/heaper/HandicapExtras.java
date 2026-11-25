@@ -1,7 +1,13 @@
 package com.heaper;
 
+import com.heaper.chat.ChatPipeline;
+import com.heaper.network.CameraJoltPayload;
+import com.heaper.network.ImpulsePayload;
+import com.heaper.network.StrainPayload;
+import com.heaper.network.TetherPayload;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
@@ -17,8 +23,14 @@ public class HandicapExtras implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		PayloadTypeRegistry.clientboundPlay().register(CameraJoltPayload.TYPE, CameraJoltPayload.CODEC);
+		PayloadTypeRegistry.clientboundPlay().register(ImpulsePayload.TYPE, ImpulsePayload.CODEC);
+		PayloadTypeRegistry.clientboundPlay().register(TetherPayload.TYPE, TetherPayload.CODEC);
+		PayloadTypeRegistry.serverboundPlay().register(StrainPayload.TYPE, StrainPayload.CODEC);
+
 		ExtraHandicapsRegistry.init();
 		ExtraHandicapManager.register();
+		ChatPipeline.register();
 
 		LOGGER.info("Handicap Extras loaded.");
 	}

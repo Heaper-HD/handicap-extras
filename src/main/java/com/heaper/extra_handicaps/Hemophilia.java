@@ -1,7 +1,9 @@
 package com.heaper.extra_handicaps;
 
 import com.heaper.ExtraHandicap;
+import com.heaper.HandicapExtras;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerLevel;
@@ -24,10 +26,28 @@ public class Hemophilia extends ExtraHandicap {
 
     private final Map<UUID, Integer> bleeding = new HashMap<>();
 
-    private boolean applyingBleed = false;;
+    private boolean applyingBleed = false;
 
     public Hemophilia() {
         super("hemophilia");
+    }
+
+    private InteractionResult tryBandage(ServerPlayer patient, ServerPlayer healer, ItemStack stack) {
+        if (!bleeding.containsKey(patient.getUUID()) || (!stack.is(Items.PAPER) && !stack.is(ItemTags.WOOL))) {
+            return InteractionResult.PASS;
+        }
+        bleeding.remove(patient.getUUID());
+        if (!healer.isCreative()) {
+            stack.shrink(1);
+        }
+        patient.level().playSound(null, patient.blockPosition(), SoundEvents.WOOL_PLACE, SoundSource.PLAYERS, 1f, 1.2f);
+        if (healer == patient) {
+            overlay(patient, "You bandage the wound.");
+        } else {
+            overlay(patient, healer.getName().getString() + " bandaged your wound.");
+            overlay(healer, "You bandage " + patient.getName().getString() + "'s wound.");
+        }
+        return InteractionResult.SUCCESS;
     }
 
     @Override
@@ -43,22 +63,14 @@ public class Hemophilia extends ExtraHandicap {
             }
         });
 
-        UseItemCallback.EVENT.register(((player, level, hand) -> {
-            if (!(player instanceof ServerPlayer p) || !bleeding.containsKey(p.getUUID())) {
-                return InteractionResult.PASS;
-            }
-            ItemStack stack = p.getItemInHand(hand);
-            if (!stack.is(Items.PAPER) && !stack.is(ItemTags.WOOL)) {
-                return InteractionResult.PASS;
-            }
+        UseItemCallback.EVENT.register(((player, level, hand) ->
+                player instanceof ServerPlayer p ? tryBandage(p, p, p.getItemInHand(hand)) : InteractionResult.PASS));
 
-            bleeding.remove(p.getUUID());
-            if (!p.isCreative()) {
-                stack.shrink(1);
+        UseEntityCallback.EVENT.register(((player, level, hand, entity, hit) -> {
+            if (player instanceof ServerPlayer healer && entity instanceof ServerPlayer patient) {
+                return tryBandage(patient, healer, healer.getItemInHand(hand));
             }
-            level.playSound(null, p.blockPosition(), SoundEvents.WOOL_PLACE, SoundSource.PLAYERS, 1f, 1.2f);
-            overlay(p, "You bandage the wound.");
-            return InteractionResult.SUCCESS;
+            return InteractionResult.PASS;
         }));
     }
 

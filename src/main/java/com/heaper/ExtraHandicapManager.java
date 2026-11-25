@@ -8,6 +8,8 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.*;
@@ -78,6 +80,32 @@ public class ExtraHandicapManager {
             ExtraHandicap h = ExtraHandicapsRegistry.get(d);
             if (h != null) {
                 h.onConsume(p, item);
+            }
+        }
+    }
+
+    public static void onPickup(ServerPlayer p, ItemEntity item) {
+        HandicapState state = HandicapManager.state();
+        if (state == null) {
+            return;
+        }
+        for (Handicap d : state.get(p.getUUID())) {
+            ExtraHandicap h = ExtraHandicapsRegistry.get(d);
+            if (h != null) {
+                h.onPickup(p, item);
+            }
+        }
+    }
+
+    public static void onEffectAdded(ServerPlayer p, MobEffectInstance effect) {
+        HandicapState state = HandicapManager.state();
+        if (state == null) {
+            return;
+        }
+        for (Handicap d : state.get(p.getUUID())) {
+            ExtraHandicap h = ExtraHandicapsRegistry.get(d);
+            if (h != null) {
+                h.onEffectAdded(p, effect);
             }
         }
     }
