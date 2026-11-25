@@ -9,7 +9,12 @@
 		"DisplayAccessor",
 		"BlockDisplayAccessor",
 		"HandicapManagerAccessor",
-		"NarcolepsyRuntimeAccessor"
+		"NarcolepsyRuntimeAccessor",
+		"FoodDataMixin",
+		"ItemStackDurabilityMixin",
+		"ServerPlayerSleepingMixin",
+		"HoardingMenuMixin",
+		"HoardingSlotMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

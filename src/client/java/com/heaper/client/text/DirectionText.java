@@ -1,4 +1,4 @@
-package com.heaper.text;
+package com.heaper.client.text;
 
 import com.handicap.Handicap;
 import com.handicap.client.ClientState;
@@ -21,7 +21,7 @@ public class DirectionText {
         if (handicap == null) {
             handicap = Handicap.byId("no_sense_of_direction");
         }
-        return handicap != null && ClientState.has(handicap);
+        return handicap != null && TextEffects.allowed() && ClientState.has(handicap);
     }
 
     public static String apply(String text) {

@@ -1,6 +1,7 @@
 package com.heaper.mixin;
 
 import com.heaper.ExtraHandicapManager;
+import com.heaper.extra_handicaps.HeavySleeper;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -40,6 +41,13 @@ public class LivingEntityMixin {
     private void handicap_extras$afterAddEffect(MobEffectInstance effect, Entity source, CallbackInfoReturnable<Boolean> cir) {
         if (cir.getReturnValue() && (Object) this instanceof ServerPlayer p) {
             ExtraHandicapManager.onEffectAdded(p, effect);
+        }
+    }
+
+    @Inject(method = "stopSleeping", at = @At("HEAD"), cancellable = true)
+    private void handicap_extras$heavySleeperDamage(CallbackInfo ci) {
+        if ((Object) this instanceof ServerPlayer p && HeavySleeper.blockWake(p)) {
+            ci.cancel();
         }
     }
 }

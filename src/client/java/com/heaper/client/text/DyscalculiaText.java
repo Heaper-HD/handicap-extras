@@ -1,4 +1,4 @@
-package com.heaper.text;
+package com.heaper.client.text;
 
 import com.handicap.Handicap;
 import com.handicap.client.ClientState;
@@ -27,14 +27,19 @@ public class DyscalculiaText {
 
     private DyscalculiaText() {}
 
+    public static boolean active() {
+        if (handicap == null) {
+            handicap = Handicap.byId("dyscalculia");
+        }
+        return handicap != null && TextEffects.allowed() && ClientState.has(handicap);
+    }
+
     public static String apply(String text) {
         if (text == null || !hasDigit(text)) {
             return text;
         }
-        if (handicap == null) {
-            handicap = Handicap.byId("dyscalculia");
-        }
-        if (handicap == null || !ClientState.has(handicap)) {
+
+        if (!active()) {
             return text;
         }
 

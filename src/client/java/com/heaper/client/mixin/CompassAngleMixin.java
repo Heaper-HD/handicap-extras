@@ -1,6 +1,6 @@
 package com.heaper.client.mixin;
 
-import com.heaper.text.DirectionText;
+import com.heaper.client.text.DirectionText;
 import net.minecraft.client.renderer.item.properties.numeric.CompassAngleState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -68,6 +68,19 @@ public class ExtraHandicapsRegistry {
         register(new Heavyweight());
         register(new ContagiousCold());
         register(new Conjoined());
+        register(new Hippopotomonstrosesquippedaliophobia());
+        register(new BadBack());
+        register(new NightTerrors());
+        register(new StageFright());
+        register(new Paranoia());
+        register(new SelectiveMutism());
+        register(new Anemia());
+        register(new HeavyHanded());
+        register(new HeavySleeper());
+        register(new HoardingDisorder());
+        register(new SleepTalking());
+        register(new Pica());
+        register(new Amnesia());
 
         frozen = true;
     }

@@ -38,7 +38,21 @@ public enum HandicapsMixin {
     CONTAGIOUS_CLD("contagious_cold", "Contagious Cold", "You have a cold, and it spreads to players near you"),
     CONJOINED("conjoined", "Conjoined", "You're tethered ot another player and can't get far from them"),
     DYSCALCULIA("dyscalculia", "Dyscalculia", "Every number you see is wrong, and keeps changing"),
-    NO_SENSE_OF_DIRECTION("no_sense_of_direction", "No Sense of Direction", "Compasses and directions lie to you");
+    NO_SENSE_OF_DIRECTION("no_sense_of_direction", "No Sense of Direction", "Compasses and directions lie to you"),
+    HIPPOPOTOMONSTROSESQUIPPEDALIOPHOBIA("hippopotomonstrosesquippedaliophobia", "Hippopotomonstrosesquippedaliophobia", "You're terrified of long words"),
+    BAD_BACK("bad_back", "Bad Back", "The more you carry, the slower you move"),
+    NIGHT_TERRORS("night_terrors", "Night Terrors", "Nightmares often wake you up before morning"),
+    STAGE_FRIGHT("stage_fright", "Stage Fright", "You fumble when someone is watching you"),
+    PARANOIA("paranoia", "Paranoia", "You see messages from your friends that they never sent"),
+    SELECTIVE_MUTISM("selective_mutism", "Selective Mutism", "You can't speak with other players nearby"),
+    ANEMIA("anemia", "Anemia", "Your health regenerates much slowly"),
+    HEAVY_HANDED("heavy_handed", "Heavy Handed", "Your tools and weapons wear out twice as fast"),
+    HEAVY_SLEEPER("heavy_sleeper", "Heavy Sleeper", "You take ages to get out of bed, and nothing can wake you sooner"),
+    HOARDING_DISORDER("hoarding_disorder", "Hoarding Disorder", "You can't bring yourself to put anything into storage"),
+    SLEEP_TALKING("sleep_talking", "Sleep Talking", "You reveal things while you sleep"),
+    PICA("pica", "Pica", "You crave things that aren't food"),
+    AMNESIA("amnesia", "Amnesia", "Every time you die, you forget where your bed is"),
+    MIRROR_WRITTING("mirror_writing", "Mirror Writing", "Words look reversed to you");
 
     @Shadow
     HandicapsMixin(String id, String displayName, String description) {

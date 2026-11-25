@@ -2,6 +2,7 @@ package com.heaper.client;
 
 import com.heaper.client.effects.HudEffects;
 import com.heaper.client.rope.TetherClient;
+import com.heaper.client.text.TextRefresher;
 import com.heaper.network.CameraJoltPayload;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -14,6 +15,7 @@ public class HandicapExtrasClient implements ClientModInitializer {
 		ExtraClientHandicapsRegistry.init();
 		ExtraClientHandicapManager.register();
 		TetherClient.register();
+		TextRefresher.register();
 		HudEffects.init();
 
 		ClientPlayNetworking.registerGlobalReceiver(CameraJoltPayload.TYPE, (payload, context) -> {
