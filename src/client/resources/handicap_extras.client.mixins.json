@@ -3,7 +3,9 @@
 	"package": "com.heaper.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"CameraMixin"
+		"CameraMixin",
+      	"TextScrambleMixin",
+		"CompassAngleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

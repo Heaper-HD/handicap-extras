@@ -36,7 +36,9 @@ public enum HandicapsMixin {
     FEATHERWEIGHT("featherweight", "Featherweight", "Low gravity: floaty jumps that are hard to control"),
     HEAVYWEIGHT("heavyweight", "Heavyweight", "Heavy gravity: short jumps, hard falls"),
     CONTAGIOUS_CLD("contagious_cold", "Contagious Cold", "You have a cold, and it spreads to players near you"),
-    CONJOINED("conjoined", "Conjoined", "You're tethered ot another player and can't get far from them");
+    CONJOINED("conjoined", "Conjoined", "You're tethered ot another player and can't get far from them"),
+    DYSCALCULIA("dyscalculia", "Dyscalculia", "Every number you see is wrong, and keeps changing"),
+    NO_SENSE_OF_DIRECTION("no_sense_of_direction", "No Sense of Direction", "Compasses and directions lie to you");
 
     @Shadow
     HandicapsMixin(String id, String displayName, String description) {

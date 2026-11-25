@@ -35,6 +35,7 @@ public class ExtraHandicapsRegistry {
 
     public static void init() {
         register(new Arthritis());
+        register(new Narcolepsy());
 
         register(new SeparationAnxiety());
         register(new Gigantism());
