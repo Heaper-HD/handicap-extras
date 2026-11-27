@@ -5,6 +5,7 @@ import com.handicap.HandicapManager;
 import com.handicap.HandicapState;
 import com.heaper.chat.ChatMessage;
 import com.heaper.network.CameraJoltPayload;
+import com.heaper.network.ImpulsePayload;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -75,6 +76,12 @@ public abstract class ExtraHandicap extends HandicapBehaviour {
     protected void jolt(ServerPlayer p, float pitch, float yaw) {
         if (ServerPlayNetworking.canSend(p, CameraJoltPayload.TYPE)) {
             ServerPlayNetworking.send(p, new CameraJoltPayload(pitch, yaw));
+        }
+    }
+
+    protected void impulse(ServerPlayer p, double x, double y, double z) {
+        if (ServerPlayNetworking.canSend(p, ImpulsePayload.TYPE)) {
+            ServerPlayNetworking.send(p, new ImpulsePayload((float) x, (float) y, (float) z));
         }
     }
 }

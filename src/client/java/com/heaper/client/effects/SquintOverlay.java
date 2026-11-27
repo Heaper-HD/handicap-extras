@@ -3,7 +3,7 @@ package com.heaper.client.effects;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 
 public class SquintOverlay {
-    public static final EffectChannel CHANNEL = new EffectChannel();
+    public static final EffectChannel CHANNEL = HudEffects.register(SquintOverlay::render);
 
     private static final float MAX_COVER = 0.38f;
     private static final float SOLID_PART = 0.55f;

@@ -81,6 +81,7 @@ public class ExtraHandicapsRegistry {
         register(new SleepTalking());
         register(new Pica());
         register(new Amnesia());
+        register(new RestlessLegs());
 
         frozen = true;
     }

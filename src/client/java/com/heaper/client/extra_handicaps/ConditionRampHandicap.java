@@ -21,6 +21,10 @@ public abstract class ConditionRampHandicap extends ExtraClientHandicap {
         this.effects = List.of(effects);
     }
 
+    protected float target(Minecraft mc) {
+        return condition(mc) ? maxIntensity : 0f;
+    }
+
     protected abstract boolean condition(Minecraft mc);
 
     @Override
@@ -28,9 +32,10 @@ public abstract class ConditionRampHandicap extends ExtraClientHandicap {
         if (mc.player == null) {
             return;
         }
-        intensity = condition(mc)
-                ? Math.min(maxIntensity, intensity + rampUp)
-                : Math.max(0f, intensity - rampDown);
+        float target = target(mc);
+        intensity = intensity < target
+                ? Math.min(target, intensity + rampUp)
+                : Math.max(target, intensity - rampDown);
         for (EffectChannel.Binding effect : effects) {
             effect.set(id(), intensity);
         }

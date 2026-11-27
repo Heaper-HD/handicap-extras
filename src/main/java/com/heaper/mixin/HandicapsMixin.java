@@ -52,7 +52,10 @@ public enum HandicapsMixin {
     SLEEP_TALKING("sleep_talking", "Sleep Talking", "You reveal things while you sleep"),
     PICA("pica", "Pica", "You crave things that aren't food"),
     AMNESIA("amnesia", "Amnesia", "Every time you die, you forget where your bed is"),
-    MIRROR_WRITTING("mirror_writing", "Mirror Writing", "Words look reversed to you");
+    MIRROR_WRITTING("mirror_writing", "Mirror Writing", "Words look reversed to you"),
+    RESTLESS_LEGS("restless_legs", "Restless Legs", "Your legs can't stay still"),
+    THALASSOPHOBIA("thalassophobia", "Thalassophobia", "Deep water fills you with dread"),
+    SYNESTHESIA("synesthesia", "Synesthesia", "You see sounds as colored shapes");
 
     @Shadow
     HandicapsMixin(String id, String displayName, String description) {
